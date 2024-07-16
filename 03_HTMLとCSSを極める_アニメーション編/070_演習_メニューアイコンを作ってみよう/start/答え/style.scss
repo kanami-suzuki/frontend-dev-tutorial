@@ -1,0 +1,43 @@
+$cBlack: black;
+$cWhite: white;
+.menu {
+  background-color: transparent;
+  border: none;
+  outline: none !important;
+  cursor: pointer;
+
+  span {
+    background-color: $cBlack;
+    width: 35px;
+    height: 2px;
+    display: block;
+    margin-bottom: 9px;
+    transition: transform 0.7s;
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
+.menu-open {
+  background-color: $cBlack;
+  & .menu {
+    & > span {
+      background-color: $cWhite;
+      &:nth-child(1) {
+        transform: translateY(11px) rotate(135deg);
+        //1本目から見て11px下(線の高さが2px、margin-bottomが9px)を中央点として45度傾ける
+        //ただ単純に45度だと動きとしてはつまらないので135度にして回転を加えている
+      }
+      &:nth-child(2) {
+        transform: translateX(-18px) scaleX(0);
+        //左に消えていくように見せるために線の幅(35px)の半分の数値分左にずらしている。
+        //半分以上にすると動きが大げさになる。
+        //scaleX(0)で線を縮小して消えたように見せる
+      }
+      &:nth-child(3) {
+        transform: translateY(-11px) rotate(-135deg);
+        //3本目から見て11px上(線の高さが2px、margin-bottomが9px)を中央点として45度傾ける
+      }
+    }
+  }
+}

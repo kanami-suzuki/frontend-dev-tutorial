@@ -1,0 +1,99 @@
+@use "mixin" as *;
+
+.try {
+  .spinner {
+    width: 40px;
+    height: 40px;
+    background-color: rgb(55, 54, 54);
+    transform-origin: center center;
+    margin: 5rem auto 8rem;
+    @include animation(
+      $name: spin,
+      $duration: 1.2s,
+      $timing-function: ease-in-out,
+      $iteration-count: infinite
+    );
+  }
+  @keyframes spin {
+    0% {
+      transform: perspective(120px) rotateX(0);
+    }
+    50% {
+      transform: perspective(120px) rotateX(-180deg) rotateY(0);
+    }
+    100% {
+      transform: perspective(120px) rotateX(-180deg) rotateY(-180deg);
+    }
+  }
+
+  .double-spinner {
+    position: relative;
+    div {
+      width: 40px;
+      height: 40px;
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      margin: auto;
+      border-radius: 50%;
+      background-color: rgb(80, 80, 80);
+      opacity: 0.6;
+      @include animation(
+        $name: double,
+        $duration: 2s,
+        $timing-function: ease-in-out,
+        $iteration-count: infinite
+      );
+      &:nth-child(2) {
+        animation-delay: -1s;
+      }
+    }
+  }
+  @keyframes double {
+    0% {
+      transform: scale(0);
+    }
+    50% {
+      transform: scale(1);
+    }
+    100% {
+      transform: scale(0);
+    }
+  }
+
+  .rect-spinner {
+    display: flex;
+    justify-content: center;
+    div {
+      width: 6px;
+      height: 20px;
+      background-color: rgb(57, 57, 57);
+      margin: 10rem 0.1rem;
+      animation: {
+        name: rect;
+        duration: 1.2s;
+        timing-function: ease-in-out;
+        iteration-count: infinite;
+      }
+      @for $i from 1 through 5 {
+        &:nth-child(#{$i}) {
+          animation-delay: -1s + $i * 0.1s;
+        }
+      }
+    }
+  }
+  @keyframes rect {
+    0% {
+      transform: scaleY(1);
+    }
+    20% {
+      transform: scaleY(2);
+    }
+    40%,
+    100% {
+      transform: scaleY(1);
+    }
+  }
+}

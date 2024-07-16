@@ -1,0 +1,47 @@
+.menu {
+  width: 3.5rem;
+  height: 3.5rem;
+  list-style-type: none;
+  margin: 2rem 1rem 2rem auto;
+  padding: 0;
+  text-align: center;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  li {
+    width: 2.5rem;
+    height: 0.2rem;
+    background-color: black;
+    border-radius: 5px;
+    margin: 0 auto 0.5rem;
+    transition: transform 0.5s;
+    &:nth-child(3) {
+      margin: 0 auto;
+    }
+  }
+}
+
+.menu-click {
+  background: #000;
+  transition: all 0.5s;
+}
+.menu-click-btn {
+  li {
+    margin: 0;
+    background-color: white;
+    &:nth-child(1) {
+      transform: rotate(135deg) translateX(3px) translateY(-3px);
+      width: 3.5rem;
+    }
+    &:nth-child(2) {
+      transform: translateX(50px);
+    }
+    &:nth-child(3) {
+      transform: rotate(-135deg) translateX(2px) translateY(1px);
+      width: 3.5rem;
+    }
+  }
+}

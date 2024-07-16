@@ -1,0 +1,12 @@
+.parent {
+  color: blue;
+  & > .element {
+    color: purple;
+    &:nth-of-type(2) {
+      color: #000;
+    }
+  }
+}
+.element {
+  color: red;
+}

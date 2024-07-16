@@ -1,0 +1,33 @@
+.menu {
+  background-color: transparent;
+  border: none;
+  outline: none !important;
+  cursor: pointer;
+}
+.menu span {
+  background-color: black;
+  width: 35px;
+  height: 2px;
+  display: block;
+  margin-bottom: 9px;
+  transition: transform 0.7s;
+}
+.menu span:last-child {
+  margin-bottom: 0;
+}
+
+.menu-open {
+  background-color: black;
+}
+.menu-open .menu > span {
+  background-color: white;
+}
+.menu-open .menu > span:nth-child(1) {
+  transform: translateY(11px) rotate(135deg);
+}
+.menu-open .menu > span:nth-child(2) {
+  transform: translateX(-18px) scaleX(0);
+}
+.menu-open .menu > span:nth-child(3) {
+  transform: translateY(-11px) rotate(-135deg);
+}/*# sourceMappingURL=style.css.map */

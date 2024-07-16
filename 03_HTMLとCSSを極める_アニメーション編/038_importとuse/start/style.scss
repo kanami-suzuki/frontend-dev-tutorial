@@ -1,0 +1,6 @@
+@use "sass:math";
+h1 {
+  background: orange;
+  //font-size: calc(30px / 2); //15px
+  font-size: math.div(30px, 2);
+}
