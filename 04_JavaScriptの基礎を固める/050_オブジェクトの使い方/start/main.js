@@ -35,3 +35,20 @@ person2.age = 12;
 console.log(person2.age);
 
 //ドット記法のほかにブラケット記法という書き方もある
+//文字列としてキーを取得している
+//そのため、キーを変数として扱うことができる
+//キーの値が動的に変化する場合に活用することができる
+const ageKey = 'age' //キーを変数に代入
+person2[ageKey] = 15; //キーの部分に変数を入れる
+console.log(person2.age);
+
+//オブジェクトにはメソッドも格納することができる
+const person3 = {
+  name3: ['suzuki', 'satou'],
+  getFllName: function () {
+    console.log(this.name3[0], this.name3[1]); //getFllName()を呼び出すとコンソールにname3の全ての値が表示される
+    //thisは直近の宣言されたオブジェクトを参照する
+    //今回の場合はperson3オブジェクトのname3プロパティということになる
+  }
+}
+person3.getFllName();
