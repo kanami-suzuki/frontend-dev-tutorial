@@ -48,3 +48,32 @@ if (1 != '1') { //厳密に比較しないため、数値が一致すること�
 } else {
   console.log('this is false')
 }
+
+//複数の条件を組み合わせたい場合は論理演算子を使用する
+if (0 == '0' && 0 === '0') { //&条件 falseになる
+  console.log('this is true');
+} else {
+  console.log('this is false')
+}
+if (0 == '0' || 0 === '0') { //or条件 trueになる
+  console.log('this is true');
+} else {
+  console.log('this is false')
+}
+
+//条件式を書かずにif文を記述することもある
+const num1 = 10;
+const bool = Boolean(num1);
+console.log(bool); //値が入っていない(0やundefined、Nullなど)場合はfalseになる
+if (num1) { //変数に値が設定されていればtrueになる
+  console.log('this is true');
+} else {
+  console.log('this is false')
+}
+//not演算子
+//最初に!をつけるとtrueはfalseになり、falseはtrueになる
+if (!num1) { //変数に値が設定されていればtrueになる
+  console.log('this is true');
+} else {
+  console.log('this is false')
+}
