@@ -1,4 +1,7 @@
 //コールバック関数
+//親となる関数の引数として渡す関数
+//ユーザーが何かアクションを起こしたタイミングで呼び出したり、
+//同じ関数から違う計算式の結果を導き出したりすることができる
 function hello(name) {
   console.log(name); //関数自体が渡される
   console.log(name()); //関数の実行結果が渡される
@@ -52,16 +55,17 @@ hello2(getFirstName, 'fled');
 
 //同じ関数で計算結果を変える
 function doSumething(a, b, callback) {
-  const result = callback(a, b);
-  console.log(result);
+  const result = callback(a, b); //第三引数を関数として扱い、第一引数と第二引数を引数として渡す
+  console.log(result); //callback()を代入した引数を呼び出し
 }
 
-function multiply(a, b) {
-  return a * b;
+function multiply(c, d) {
+  return c * d; //掛け算を返す
 }
 
-function plus(a, b) {
-  return a + b;
+function plus(e, f) {
+  return e + f; //足し算を返す
 }
+//doSumething()のcallback()にそれぞれの関数を入れる
 doSumething(2, 2, multiply);
 doSumething(2, 3, plus);
