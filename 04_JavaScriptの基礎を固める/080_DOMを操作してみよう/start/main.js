@@ -4,3 +4,22 @@
 //documentにも独自のメソッドやプロパティがそれぞれあり、それらを使用することでHTMLの情報を参照したり、書き換えたりすることが可能となる
 //その他にイベントの登録ができ、クリックやページの読み込みなどのユーザーが何かアクションを起こしたときに発火するイベントの登録も行うことができる
 //上記のことがDOMAPI,DOMインターフェイスと呼ばれるもの
+
+//bodyの中の子要素を配列で取得する
+console.log(document.body.children);
+//DOM(HTML)の中身は上記のように層のようになっており、この層のことをDOMツリーとも呼ぶ
+
+//HTMLの中身を取得
+//名前をつけている場合はquerySelector()メソッドを使用する。cssのようにシャープ(#)はid、ドット(.)はクラスを呼び出す
+console.log(document.querySelector('#main-title'));
+console.log(document.querySelector('.sub-title'));
+
+//要素で呼び出す場合は何もつけずに要素名だけ指定する
+console.log(document.querySelector('h1'));
+
+//querySelector()で複数の同じクラスがあった場合は該当するクラスの一番初めの要素が呼び出される
+//全て呼び出す場合はquerySelectorAll()で呼び出すと全ての一致するクラスが配列で呼び出される
+console.log(document.querySelectorAll('.item'));
+
+//要素名でも同じようなことができる
+console.log(document.querySelectorAll('ul > li'));
