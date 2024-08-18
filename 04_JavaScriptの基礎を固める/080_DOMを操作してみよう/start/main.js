@@ -28,13 +28,28 @@ console.log(document.querySelectorAll('ul > li'));
 const h1 = document.querySelector('#main-title');
 
 //innerHTMLプロパティは要素の中身を書き換えることができる
-h1.innerHTML = 'AAAAA' //文字列が変更できる
-h1.innerHTML = 'AAAAA <small style="color: blue;">BBBB</small>' //タグの追加もできる。「AAAAA BBBB」とブラウザに表示される
+// h1.innerHTML = 'AAAAA' //文字列が変更できる
+// h1.innerHTML = 'AAAAA <small style="color: blue;">BBBB</small>' //タグの追加もできる。「AAAAA BBBB」とブラウザに表示される
 
 //textContentプロパティは要素のテキストを書き換えることができる
-h1.textContent = 'Hello World';
-h1.textContent = 'AAAAA <small style="color: blue;">BBBB</small>'; //AAAAA <small style="color: blue;">BBBB</small>とブラウザに表示される
+// h1.textContent = 'Hello World';
+// h1.textContent = 'AAAAA <small style="color: blue;">BBBB</small>'; //AAAAA <small style="color: blue;">BBBB</small>とブラウザに表示される
 
 //styleプロパティでスタイルの情報を書き換える
 h1.style.backgroundColor = '#ccc';
-console.log(h1.style.backgroundColor)
+console.log(h1.style.backgroundColor);
+
+//クラスにアクセス
+h1.classList.add('underline'); //クラスを付与する
+h1.classList.remove('underline'); //クラスを削除する
+h1.classList.toggle('underline'); //クラスを付与したり削除したりする
+
+//querySelector()の範囲を限定する
+// const ul = document.querySelector('ul');
+// ul.style.color = 'red';
+// const firstList = ul.querySelector('li'); //ulの中の最初のliにquerySelector()でスタイルを指定する
+// firstList.style.color = 'black';
+
+//querySelectorAll()の複数要素にスタイルを適用
+const li = document.querySelectorAll('li');
+li.forEach(node => node.style.color = 'purple');
