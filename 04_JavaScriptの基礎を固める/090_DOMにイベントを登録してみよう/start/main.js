@@ -5,7 +5,10 @@ const btn = document.querySelector('#btn');
 //addEventListener()イベントに関するメソッド
 //第一引数に何のイベントかを登録し、第二引数にイベントの中身を関数で記述する
 const hello = function () {
-  alert('hello');
+  // alert('hello');
+  // btn.style.color = 'red'; 下記と同じ意味になる
+  this.style.color = 'red'; //直前のオブジェクトを指す
+  console.log(this)
 }
 btn.addEventListener('click', hello);
 btn.addEventListener('mouseenter', hello); //要素内にマウスがホバーされたら
