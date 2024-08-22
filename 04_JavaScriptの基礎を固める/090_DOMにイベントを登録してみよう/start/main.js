@@ -40,3 +40,16 @@ const changeBackColor = function () {
   h1.style.background = 'blue';
 }
 btn.addEventListener('click', changeBackColor);
+
+//addEventListener()と同じ意味のイベントプロパティ
+//onclickプロパティを使用すると、addEventListener('click')と同じ意味のイベントを実行することができる
+//onclickプロパティは複数のイベントを登録することができないため、一つの関数内にまとめる必要がある。複数のイベントを登録した場合、後に登録したイベントが実行される
+//また、イベントハンドラはHTMLのDOMに直接記述することもできる
+//現在こちらの方法はあまりメジャーではない
+const subTitle = document.querySelector('.sub-title');
+const changeColor = () => {
+  subTitle.style.color = 'green';
+}
+btn.onclick = changeColor;
+//こちらの方法をイベントハンドラと呼ぶ
+//addEventListener()を使用する方はイベントリスナと呼ぶ
