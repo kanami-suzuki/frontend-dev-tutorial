@@ -28,6 +28,17 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 //クラスを定義(宣言)する。関数のように()は使用しない
-class textAnimation {
-
+//クラスにはコンストラクタ(constructor)メソッド(関数)を登録することができる
+//コンストラクタとは定義したクラス(下記だとtextAnimation)からオブジェクトを生成し、初期化する際に実行されるメソッド
+class TextAnimation {
+    constructor(el) {
+        this.el = el;
+        // alert(el);
+    }
+    log() {
+        console.log(this.el);
+    }
 }
+const ta = new TextAnimation('こんにちは')
+// alert(ta.el);
+ta.log();
