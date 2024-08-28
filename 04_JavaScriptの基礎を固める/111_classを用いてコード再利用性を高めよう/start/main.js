@@ -28,17 +28,23 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 //クラスを定義(宣言)する。関数のように()は使用しない
+//ある程度の機能のまとまりを表現することができる
 //クラスにはコンストラクタ(constructor)メソッド(関数)を登録することができる
 //コンストラクタとは定義したクラス(下記だとtextAnimation)からオブジェクトを生成し、初期化する際に実行されるメソッド
+//クラスの名前の最初は大文字を使う
 class TextAnimation {
+    //クラスを初期化するconstructor関数を記述する
+    //constructorはクラスが呼び出される時に必ず実行する関数
     constructor(el) {
         this.el = el;
-        // alert(el);
+        console.log(this); //this = TextAnimation
     }
     log() {
         console.log(this.el);
     }
 }
+//クラスを呼び出すときは「new クラス名」でクラスを呼び出す。
+//下記では呼び出したクラスを変数に代入している
 const ta = new TextAnimation('こんにちは')
 // alert(ta.el);
 ta.log();
