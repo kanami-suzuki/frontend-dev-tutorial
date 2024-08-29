@@ -44,6 +44,7 @@ class TextAnimation {
     }
 }
 //クラスを呼び出すときは「new クラス名」でクラスを呼び出す。
+//クラス名の()内の値はconstructor関数の引数に渡される
 //下記では呼び出したクラスを変数に代入している
 const ta = new TextAnimation('こんにちは')
 // alert(ta.el);
