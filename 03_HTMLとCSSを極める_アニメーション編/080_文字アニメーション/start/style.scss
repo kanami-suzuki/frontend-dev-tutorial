@@ -1,46 +1,52 @@
-@use "mixin" as *;
+@use "mixin"as *;
+
 body {
   margin: 0;
 }
+
 #container {
   position: relative;
-  height: 100vh;
   width: 100%;
+  height: 100vh;
   background-color: teal;
 }
+
 .animate-title {
-  color: #fff;
+  opacity: 0;
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  opacity: 0;
-  font-family: "Teko", sans-serif;
+  color: #ffffff;
   font-size: 2em;
+  font-family: "Teko", sans-serif;
+
   &.inview {
     opacity: 1;
+
     & .char {
+      @include animation($name: kf-animate-chars,
+      $duration: .5s,
+      $timing-function: cubic-bezier(.39, 1.57, .58, 1),
+      $fill-mode: both);
       display: inline-block;
-      @include animation(
-        $name: kf-animate-chars,
-        $duration: 0.5s,
-        $timing-function: cubic-bezier(0.39, 1.57, 0.58, 1),
-        $fill-mode: both
-      );
+      animation-iteration-count: infinite;
 
       @for $i from 1 through 9 {
         &:nth-child(#{$i}) {
-          animation-delay: $i * 0.04s;
+          animation-delay: $i * .04s;
         }
       }
     }
   }
 }
+
 @keyframes kf-animate-chars {
   0% {
     opacity: 0;
     transform: translateY(-50%);
   }
+
   100% {
     opacity: 1;
     transform: translateY(0);
